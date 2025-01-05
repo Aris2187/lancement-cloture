@@ -17,125 +17,51 @@
 <p class="p1">&lt;head&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Lancement &amp; Clôture Journée&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Lancement &amp; Clôture&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>body {</p>
 <p class="p1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f4f4f4;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #4CAF50;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>}</p>
 <p class="p1"><span class="Apple-converted-space">        </span>.section {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 40px;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section h2 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.data-table {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>table {</p>
 <p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>border-collapse: collapse;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.data-table th, .data-table td {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>th, td {</p>
 <p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ddd;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>padding: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.data-table th {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #4CAF50;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>th {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f4f4f4;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.metrics {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-around;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.metric {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #e7f5e7;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 30%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>canvas {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px auto;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>}</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
 <p class="p1">&lt;/head&gt;</p>
 <p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Lancement &amp; Clôture Journée&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Section des métriques principales --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="metrics"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="metric"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;CA N-1&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;3,498 €&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="metric"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Objectif CA&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;3,500 €&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="metric"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;CA Réalisé&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;3,065 €&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Lancement &amp; Clôture - Visualisation&lt;/h1&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Section des données tabulaires --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Données de Performance&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;table class="data-table"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Indicateur&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Valeur N-1&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Objectif&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Réalisé&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;Indice de Vente (IV)&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;1.32&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;1.50&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;1.14&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;Panier Moyen (PM)&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;184.11 €&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;210.00 €&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;219.00 €&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;Trafic&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;109&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;125&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;78&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section" id="objectives-daily"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Objectifs Journaliers&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;table id="daily-table"&gt;&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Section des commentaires ou actions --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Actions et Commentaires&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Veuillez ajouter vos remarques ou les actions entreprises pour atteindre les objectifs :&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;textarea rows="5" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd;"&gt;&lt;/textarea&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section" id="hourly-chart"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Tranches Horaires N-1&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;canvas id="hourlyChart"&gt;&lt;/canvas&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
 <p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;script src="app.js"&gt;&lt;/script&gt;</p>
 <p class="p1">&lt;/html&gt;</p>
 </body>
 </html>
